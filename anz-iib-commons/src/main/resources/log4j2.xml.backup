@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="5">
+    <Appenders>
+
+     <File name="MyFile" fileName="/root/logs/app.log">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+     </File>
+     <Async name="Async">
+      <AppenderRef ref="MyFile"/>
+     </Async>
+     
+     <File name="HttpJsonToHttpJsonFile" fileName="/root/logs/HttpJsonToHttpJson.log">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+     </File>
+     <Async name="HttpJsonToHttpJsonAsync">
+      <AppenderRef ref="HttpJsonToHttpJsonFile"/>
+     </Async>
+     
+     <Console name="Console" target="SYSTEM_OUT">
+	  <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+	 </Console>
+
+    </Appenders>
+
+    <Loggers>
+     <Root level="error">
+      <AppenderRef ref="Async"/>
+     </Root>
+
+     <logger name="com.anz" level="info" additivity="false">
+      <AppenderRef ref="Async"/>
+     </logger>
+     <logger name="ApplicationLogger" level="info" additivity="false">
+      <AppenderRef ref="Async"/>
+     </logger>
+
+     <logger name="com.anz.HttpJsonToHttpJson" level="info" additivity="false">
+      <AppenderRef ref="HttpJsonToHttpJsonAsync"/>
+     </logger>
+
+  </Loggers>
+</Configuration>

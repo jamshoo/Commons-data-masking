@@ -1,0 +1,7 @@
+#Start MQ and DB2
+sudo -u mqm /opt/mqm/bin/strmqm QMGR
+sudo -u db2inst1 /home/db2inst1/sqllib/adm/db2start
+
+
+# setting JMX on Integrater Server VM
+mqsichangeproperties Node01 -e svr1 -o ComIbmJVMManager -n jvmSystemProperty -v"-Dcom.sun.management.jmxremote.port=5000 -Dcom.sun.management.jmxremote.ssl=fale -Dcom.sun.management.jmxremote.authenticate=false"

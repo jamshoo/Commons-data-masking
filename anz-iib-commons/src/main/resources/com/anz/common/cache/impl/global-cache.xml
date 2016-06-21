@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalcachesettings>
+<caches>
+	<cache>
+		<name>SampleKey</name>
+		<timeToLiveSeconds>10</timeToLiveSeconds>
+	</cache>
+	<cache>
+		<name>StaticCache</name>
+		<timeToLiveSeconds>1000</timeToLiveSeconds>
+	</cache>
+	<cache>
+		<name>MessageHeaderCache</name>
+		<timeToLiveSeconds>300</timeToLiveSeconds>
+	</cache>
+	<cache>
+		<name>TransactionIdCache</name>
+		<timeToLiveSeconds>300</timeToLiveSeconds>
+	</cache>
+</caches>
+</globalcachesettings>
